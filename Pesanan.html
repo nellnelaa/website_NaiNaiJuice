@@ -1,0 +1,98 @@
+<html><!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"></html>
+<head>
+    <title>Pesanan</title>
+</head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+<body class="container" >
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img src="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Asset/Logo/NaiNai_Juice.png" class="rounded float-start" style="width:80px;"/>
+      <a class="navbar-brand" href="#"><b></b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Pesan.html">Pesan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/About%20Us.html">About Us</a>
+          </li>
+          </li>
+        </ul>
+        <div class="dropdown" data-bs-theme="dark">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonDark" data-bs-toggle="dropdown" aria-expanded="false">
+            Lainnya
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonDark">
+            <li><a class="dropdown-item" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Pesanan.html">Pesanan</a></li>
+            <li><a class="dropdown-item" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Contact.html">Contact</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="file:///C:/Users/hp/OneDrive/Documents/Kuliah%20Semester%204/PEMWEB/UTS_WEBSITE_UMKM/Login.html">Login</a></li>
+          </ul>
+        </div>
+      </div> 
+    </div>
+  </nav>
+
+    <br><br>
+      <h1 style="text-align: center;" font="roboto">Data Pesanan anda</h1>
+      <table id="orderTable" class="table table-dark table-striped table-bordered" border="3">
+        <thead>
+          <tr class="text-center">
+            <th><b>Nama</b></th>
+            <th><b>Alamat</b></th>
+            <th><b>Nama Produk</b></th>
+            <th><b>Jumlah</b></th>
+            <th><b>Nomor Telepon</b></th>
+          </tr> 
+        </thead>
+      </table>
+
+  <script>
+    // Ambil data pesanan dari localStorage
+    var orderData = localStorage.getItem('order');
+    if (orderData) {
+      var order = JSON.parse(orderData);
+      // Tambahkan data pesanan ke dalam tabel
+      var table = document.getElementById('orderTable');
+      var row = table.insertRow(1); // Insert at second row (first row is for header)
+      var cell1 = row.insertCell(0);
+      cell1.style.textAlign = "center";
+      var cell2 = row.insertCell(1);
+      cell2.style.textAlign = "center";
+      var cell3 = row.insertCell(2);
+      cell3.style.textAlign = "center";
+      var cell4 = row.insertCell(3);
+      cell4.style.textAlign = "center";
+      var cell5 = row.insertCell(4);
+      cell5.style.textAlign = "center";
+      cell1.innerHTML = order.nameorder;
+      cell2.innerHTML = order.addressorder;
+      cell3.innerHTML = order.yourorder;
+      cell4.innerHTML = order.amountorder;
+      cell5.innerHTML = order.phonenumberorder;
+    }
+   
+    
+  </script>
+    
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</html>
